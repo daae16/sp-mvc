@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Test">
+  <select id="selectTest" resultType="com.sp.mvc.vo.TestVo">
+    select * from test where=#{tNum} and #{tPassword}
+  </select>
+  
+  <insert id="insertTest" parameterType="com.sp.mvc.vo.TestVO">
+    insert into test (t_num,t_id,t_password) 
+    values (seq_t_num.nextval,#{tId},#{tPassword})
+  </insert>
+</mapper>
